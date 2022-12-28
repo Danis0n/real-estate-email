@@ -10,7 +10,7 @@ export interface PasswordRestoreRequest {
 }
 
 export interface PasswordRestoreResponse {
-  status: string;
+  status: number;
   error: string;
 }
 
@@ -20,7 +20,7 @@ export interface AccountConfirmRequest {
 }
 
 export interface AccountConfirmResponse {
-  status: string;
+  status: number;
   error: string;
 }
 

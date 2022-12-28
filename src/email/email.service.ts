@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { HttpStatus, Inject, Injectable } from "@nestjs/common";
 import { MailerService } from '@nestjs-modules/mailer';
 import {
   AccountConfirmRequest,
@@ -21,7 +21,7 @@ export class EmailService {
       subject: 'Restore your password',
       text: link,
     });
-    return { error: null, status: '200' };
+    return { error: null, status: HttpStatus.OK };
   }
 
   public async accountConfirm(
@@ -33,6 +33,6 @@ export class EmailService {
       subject: 'Confirm your account',
       text: link,
     });
-    return { error: null, status: '200' };
+    return { error: null, status: HttpStatus.OK };
   }
 }
