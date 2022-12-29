@@ -23,7 +23,7 @@ import { MailerModule } from '@nestjs-modules/mailer';
         },
       },
       defaults: {
-        from: '\'"No Reply" <sopriko.daniil@gmail.com>\'',
+        from: `\'"No Reply" <${process.env.EMAIL_NO_REPLY}>\'`,
       },
     }),
   ],
