@@ -16,11 +16,13 @@ export class EmailService {
     dto: PasswordRestoreRequest,
   ): Promise<PasswordRestoreResponse> {
     const link = `http://localhost:3000/auth/restore/${dto.token}`;
+
     await this.mailService.sendMail({
       to: dto.email,
       subject: 'Restore your password',
       text: link,
     });
+
     return { error: null, status: HttpStatus.OK };
   }
 
@@ -28,11 +30,13 @@ export class EmailService {
     dto: AccountConfirmRequest,
   ): Promise<AccountConfirmResponse> {
     const link = `http://localhost:3000/auth/confirm/${dto.token}`;
+
     await this.mailService.sendMail({
       to: dto.email,
       subject: 'Confirm your account',
       text: link,
     });
+
     return { error: null, status: HttpStatus.OK };
   }
 }
